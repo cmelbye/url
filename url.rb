@@ -18,3 +18,8 @@ get '/:code' do
   redirect(@url.url) if @url.note.empty?
   erb :note
 end
+get '/p/:code' do
+  return unless params[:code]
+  @url = Url.find_by_code(params[:code])
+  erb :preview
+end
