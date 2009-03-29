@@ -14,7 +14,6 @@ end
 get '/:code' do
   return unless params[:code]
   @url = Url.find_by_code(params[:code])
-  
   redirect('/') if @url.nil?
   redirect(@url.url) if @url.note.empty?
   erb :note

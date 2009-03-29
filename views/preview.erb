@@ -1,3 +1,7 @@
 <h2>URL Preview</h2>
 <p><strong>URL:</strong> <%= @url.url %></p>
+<% if not @url.note.empty? %>
+<p><strong>Note:</strong><br />
+	<%= @url.note %></p>
+<% end %>
 <p><a href="<%= @url.url %>">Continue?</a></p>
