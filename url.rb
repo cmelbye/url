@@ -7,6 +7,7 @@ get '/' do
 end
 post '/' do
   return unless params[:url]
+  params[:url].replace("http://" + params[:url]) if not params[:url] =~ /^(https?)/
   @url = Url.create( :url => params[:url], :note => params[:note] )
   erb :saved
 end
