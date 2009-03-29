@@ -1,0 +1,12 @@
+<h2>Short URL</h2>
+<form action="/" method="post">
+	URL: <input type="text" name="url" /><br />
+	Note: <input type="text" name="note" /> (Optional)<br />
+	<input type="submit" value="Shorten" />
+</form>
+<h3>Recent Shortenings</h3>
+<ul>
+<% for url in @urls %>
+	<li><a href="<%= url.url %>"><%= url.url %></a> to <a href="/<%= url.code %>">http://mudoo.net:4567/<%= url.code %></a></li>
+<% end %>
+</ul>
